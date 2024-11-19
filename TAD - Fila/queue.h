@@ -9,10 +9,12 @@ T_Queue init(int maxSize); //
 
 //void init(T_Queue queue, int size); //muda o valor do ponteiro
 
+void destroy(T_Queue queue); 
+
 bool is_full(T_Queue queue); 
 
 bool is_empty(T_Queue queue);
 
-bool enqueue(T_Queue queue, T_Info* elemento);//devolve um boolean se ele conseguiu ou nao retirar e devolve o elemento com o ponteiro;
+bool enqueue(T_Queue queue, T_Info element); 
 
-// T_Queue dequeue(T_Queue queue); // retorna o elemento retirado; 
+bool dequeue (T_Queue queue, T_Info* elemento); 
