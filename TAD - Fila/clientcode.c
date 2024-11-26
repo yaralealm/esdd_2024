@@ -1,27 +1,47 @@
 #include <stdio.h>
 #include "queue.h"
 
-int main(int argc, char const *argv[])
-{
-    T_Queue fila; 
+int main() {
 
-    fila = init(5); 
+    T_Queue fila;
+    T_Info saiu;
 
-    printf("%s\n", enqueue(fila, 'a') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'b') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'c') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'd') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'e') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'f') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'g') ? "Entrou" : "Não entrou"); 
-    printf("%s\n", enqueue(fila, 'h') ? "Entrou" : "Não entrou"); 
+    fila = init(5);
 
-    while (!is_empty(fila))
-    {
-        dequeue(fila, &saiu); 
-        printf("Saiu: ")
+    printf("%s\n", enqueue(fila, 'A') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'B') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'C') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'D') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'E') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'F') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'G') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'H') ? "Entrou" : "Não entrou");
+
+    while(!is_empty(fila)) {
+        dequeue(fila, &saiu);
+        printf("Saiu: %c\n", saiu);
     }
-    
 
+    printf("%s\n", enqueue(fila, 'A') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'B') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'C') ? "Entrou" : "Não entrou");
+    if (dequeue(fila, &saiu))       
+        printf("Saiu: %c\n", saiu);
+    if (dequeue(fila, &saiu))       
+        printf("Saiu: %c\n", saiu);
+    if (dequeue(fila, &saiu))       
+        printf("Saiu: %c\n", saiu);
+    if (dequeue(fila, &saiu))       
+        printf("Saiu: %c\n", saiu);
+    if (dequeue(fila, &saiu))       
+        printf("Saiu: %c\n", saiu);
+
+    printf("%s\n", enqueue(fila, 'D') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'E') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'F') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'G') ? "Entrou" : "Não entrou");
+    printf("%s\n", enqueue(fila, 'H') ? "Entrou" : "Não entrou");
+
+    destroy(fila);
     return 0;
 }
